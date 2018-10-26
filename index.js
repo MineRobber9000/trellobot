@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const express = require("express");
 const app = express();
+const fs = require('fs');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -9,14 +10,20 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 app.post(config.http_prefix+"/test",function (req,res) {
-	console.log(req.body);
-	res.send(JSON.stringify(req.body));
+	// log to console (comment out if you don't want your console to be spammed
+	// console.log(req.body);
+	// Output to file (for JSON analysis)
+	fs.writeFile("out.json",JSON.stringify(req.body),function(err){if (err) {console.error(err);};});
+	// Send message to channel
+	const channel = client.channels.get(config.notification_channel);
+	channel.sendMessage("Webhook pinged!"); // TODO: Build a response around the data recieved
+	res.send("");
 });
 
 app.head(config.http_prefix+"/test",function (req,res) { res.send(""); });
 
 client.on("ready", () => {
-	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+	console.log(`*hacker voice* I'm in!`); 
 });
 
 client.on("message", async message => {
