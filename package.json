@@ -1,0 +1,27 @@
+{
+  "name": "trellobot",
+  "version": "0.0.1",
+  "description": "A Discord bot with trello webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MineRobber9000/trellobot.git"
+  },
+  "keywords": [
+    "trello",
+    "discord"
+  ],
+  "author": "Robert Miles <khuxkm@ttm.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MineRobber9000/trellobot/issues"
+  },
+  "homepage": "https://github.com/MineRobber9000/trellobot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "express": "^4.16.4"
+  }
+}
