@@ -1,5 +1,6 @@
 {
   "token": "THISISNOTATOKEN",
   "prefix": "+",
-  "http_prefix": "/bot"
+  "http_prefix": "/bot",
+  "http_port": 8000
 }

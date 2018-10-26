@@ -41,6 +41,6 @@ client.on("message", async message => {
   }
 });
 
-app.listen(8000,function() { console.log("On port 8000"); });
+app.listen(config.http_port,function() { console.log("On port "+config.http_port); });
 
 client.login(config.token);
